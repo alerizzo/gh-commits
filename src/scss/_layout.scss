@@ -1,0 +1,60 @@
+$nav-menu-bck: #f1faff;
+$nav-menu-border: #e5ecf5;
+
+.Layout {
+  background: $background;
+  min-height: 100vh;
+}
+
+.navbar-brand .navbar-item {
+  width: 80px;
+  justify-content: center;
+}
+
+.NavMenu {
+  background-color: $nav-menu-bck;
+  width: 100%;
+  height: calc(100vh - #{$navbar-height});
+  border-right: solid 1px $nav-menu-border;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  left: 0;
+
+  .NavMenu-section {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+
+    &:not(:last-child) {
+      border-bottom: solid 1px $nav-menu-border;
+    }
+  }
+
+  .NavMenuTextButton,
+  .NavMenuButton {
+    border: 0 none;
+    border-radius: 0;
+    background: transparent;
+    font-size: 10px;
+  }
+
+  .NavMenuButton {
+    display: flex;
+    flex-direction: column;
+    padding: 36px 0;
+
+    &:hover {
+      background: rgba($dark, 0.05);
+    }
+
+    img {
+      width: 24px;
+      margin-bottom: 8px;
+    }
+
+    &.is-active {
+      font-weight: bold;
+    }
+  }
+}
