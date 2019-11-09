@@ -1,0 +1,46 @@
+.control {
+  &[data-error] {
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: attr(data-error);
+      right: 1rem;
+      color: $danger;
+      height: 100%;
+      align-items: center;
+      display: flex;
+      top: 0;
+    }
+  }
+}
+
+.input[disabled],
+.textarea[disabled],
+.select select[disabled],
+fieldset[disabled] .input,
+fieldset[disabled] .textarea,
+fieldset[disabled] .select select,
+.select fieldset[disabled] select {
+  background-color: transparent;
+  border-color: rgba($black, 0.1);
+  box-shadow: none;
+  color: rgba($black, 0.2);
+}
+
+.RepositorySearch {
+  max-width: 800px;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .control {
+    flex-grow: 1;
+    margin: 0 10px 0 20px;
+  }
+
+  label {
+    white-space: nowrap;
+  }
+}

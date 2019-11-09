@@ -1,0 +1,50 @@
+.CommitsPageHeader {
+  background-color: $grey-lighter;
+  padding: $gap;
+  position: sticky;
+  top: $navbar-height;
+  z-index: 1;
+
+  .CommitsPageHeader_TableHeader {
+    margin: 0 $gap * -1 $gap * -1;
+    padding: $gap $gap 12px;
+    background: $white;
+    font-size: $size-7;
+    text-transform: uppercase;
+  }
+}
+
+.CommitRow {
+  border-bottom: solid 1px $border;
+
+  &.CommitRow_Header {
+    border-bottom: solid 2px $border;
+  }
+
+  figure {
+    flex-shrink: 0;
+  }
+}
+
+.CommitsList {
+  padding: 0 $gap $gap;
+
+  .columns:first-child {
+    margin-top: 0;
+  }
+
+  .column {
+    align-items: center;
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+
+    .tag {
+      margin-left: 8px;
+    }
+
+    .image {
+      margin-right: 8px;
+    }
+  }
+}

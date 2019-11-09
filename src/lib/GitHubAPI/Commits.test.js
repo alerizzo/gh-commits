@@ -1,19 +1,19 @@
 import { parseGitHubURL } from './Commits';
 
 it('parses URL of master', () => {
-  const parsedURL = parseGitHubURL('https://github.com/facebook/react');
+  const parsedURL = parseGitHubURL('https://github.com/face-book/rea.ct');
   expect(parsedURL).toMatchObject({
-    owner: 'facebook',
-    repository: 'react',
+    owner: 'face-book',
+    repository: 'rea.ct',
     refName: 'master',
   });
 });
 
 it('parses URL of any other branch', () => {
-  const parsedURL = parseGitHubURL('https://github.com/facebook/react/tree/16.8.6');
+  const parsedURL = parseGitHubURL('https://github.com/face-book/rea_ct/tree/16.8.6');
   expect(parsedURL).toMatchObject({
-    owner: 'facebook',
-    repository: 'react',
+    owner: 'face-book',
+    repository: 'rea_ct',
     refName: '16.8.6',
   });
 });

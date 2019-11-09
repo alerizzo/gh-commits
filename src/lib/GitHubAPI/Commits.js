@@ -3,30 +3,34 @@ import axios from 'axios';
 const gitHubAPI = axios.create({
   baseURL: 'https://api.github.com/graphql',
   headers: {
-    Authorization: `bearer ${process.env.REACT_APP_GITHUB_PERSONAL_ACCESS_TOKEN}`,
+    Authorization: `bearer ${process.env.REACT_APP_GITHUB_TOKEN}`,
   },
 });
 
-const getCommitsQuery = ({ owner, repository, refName, first }) => `{
+const getCommitsQuery = ({ owner, repository, refName, first, after }) => `{
   repository(owner:"${owner}", name:"${repository}") {
 		ref(qualifiedName:"${refName}") {
       target {
         ... on Commit {
           id
-          history(first: ${first || '10'}) {
+          history(first: ${first || '20'}${after ? `, after: "${after}"` : ''}) {
             pageInfo {
               hasNextPage
+              endCursor
             }
             edges {
               node {
                 abbreviatedOid
-                message
+                messageHeadline
                 committedDate
                 author {
                   name
                   email
                   avatarUrl
                 }
+                parents {
+                  totalCount
+                }   
               }
             }            
           }
@@ -41,7 +45,7 @@ export const parseGitHubURL = url => {
   // GitHub URL for any other branch --> https://github.com/[owner]/[repo]/tree/[ref]
 
   let result = url.match(
-    /^https:\/\/github\.com\/(?<owner>\w+)\/(?<repository>\w+)(?<hasRef>\/tree\/(?<refName>[^/]+))?\/?$/
+    /^https:\/\/github\.com\/(?<owner>[^/]+)\/(?<repository>[^/]+)(?<hasRef>\/tree\/(?<refName>[^/]+))?\/?$/
   );
 
   if (result) {
@@ -57,14 +61,20 @@ export const parseGitHubURL = url => {
   return null;
 };
 
-export const fetchCommits = (gitHubURL, options) => {
-  const parsedUrl = parseGitHubURL(gitHubURL);
-
-  gitHubAPI
-    .post('', {
-      query: getCommitsQuery({ ...parsedUrl, ...options }),
-    })
-    .then(result => {
-      return result;
+export const fetchCommits = async (repository, options) => {
+  try {
+    const result = await gitHubAPI.post('', {
+      query: getCommitsQuery({ ...repository, ...options }),
     });
+
+    const history = result.data.data.repository.ref.target.history;
+
+    return {
+      entries: history.edges.map(entry => entry.node),
+      hasNextPage: history.pageInfo.hasNextPage,
+      endCursor: history.pageInfo.endCursor,
+    };
+  } catch (err) {
+    throw err;
+  }
 };

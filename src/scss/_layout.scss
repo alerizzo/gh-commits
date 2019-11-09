@@ -1,24 +1,73 @@
 $nav-menu-bck: #f1faff;
-$nav-menu-border: #e5ecf5;
+$nav-menu-border: $border;
+$footer-bck: $grey-lighter;
+$layout-text: $grey;
 
 .Layout {
   background: $background;
-  min-height: 100vh;
+  min-height: calc(100vh - #{$navbar-height});
+
+  .Layout-body {
+    min-height: calc(100vh - #{$navbar-height});
+    display: flex;
+    flex-direction: column;
+
+    main {
+      flex: 1 0 auto;
+      background: $white;
+    }
+
+    footer {
+      flex-shrink: 0;
+      background-color: $footer-bck;
+      font-size: $size-7;
+      color: $layout-text;
+      padding: $gap / 2 $gap;
+    }
+  }
 }
 
-.navbar-brand .navbar-item {
-  width: 80px;
+.navbar {
+  align-items: stretch;
+  display: flex;
+
+  .navbar-brand .navbar-item {
+    width: 80px;
+    justify-content: center;
+  }
+}
+
+.navbar-content {
+  align-items: center;
   justify-content: center;
+  display: flex;
+
+  input[type='text'].input {
+    background-color: transparent;
+    color: $white;
+
+    &:not(.is-danger):not(.is-primary) {
+      border-color: $grey;
+    }
+
+    &::placeholder {
+      color: $grey-light;
+    }
+
+    &.is-danger {
+      border-color: $red;
+    }
+  }
 }
 
 .NavMenu {
   background-color: $nav-menu-bck;
-  width: 100%;
+  width: 80px;
   height: calc(100vh - #{$navbar-height});
   border-right: solid 1px $nav-menu-border;
   overflow: hidden;
-  position: sticky;
-  top: 0;
+  position: fixed;
+  top: $navbar-height;
   left: 0;
 
   .NavMenu-section {
@@ -36,25 +85,38 @@ $nav-menu-border: #e5ecf5;
     border: 0 none;
     border-radius: 0;
     background: transparent;
-    font-size: 10px;
+    font-size: $size-7;
+    color: $layout-text;
   }
 
   .NavMenuButton {
     display: flex;
     flex-direction: column;
     padding: 36px 0;
+    background-color: rgba($dark, 0);
+    transition: background-color 0.3s ease-out;
 
     &:hover {
-      background: rgba($dark, 0.05);
+      background-color: rgba($dark, 0.05);
+
+      img {
+        opacity: 0.85;
+      }
     }
 
     img {
       width: 24px;
       margin-bottom: 8px;
+      opacity: 0.5;
+      transition: opacity 0.3s ease-out;
     }
 
     &.is-active {
       font-weight: bold;
+
+      img {
+        opacity: 1;
+      }
     }
   }
 }
