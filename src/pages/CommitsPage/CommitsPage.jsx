@@ -22,6 +22,7 @@ function CommitsPage({ repository }) {
           setLoading(false);
         })
         .catch(err => {
+          setCommits({ ...repository });
           setError(err);
           setLoading(false);
         });
@@ -31,9 +32,10 @@ function CommitsPage({ repository }) {
   const handleSearch = () => {};
 
   const isBlank = !loading && !repository,
-    isEmpty = !loading && !!repository && commits && commits.entries.length === 0,
+    isEmpty =
+      !loading && !!repository && commits && commits.entries && commits.entries.length === 0,
     isError = !loading && !!error,
-    isOk = !loading && !error && commits && commits.entries.length > 0;
+    isOk = !loading && !error && commits && commits.entries && commits.entries.length > 0;
 
   console.dir(commits);
 
@@ -45,6 +47,10 @@ function CommitsPage({ repository }) {
         disabled={!isOk}
         showTableHeader={isOk}
       />
+      {loading && <span>Loading</span>}
+      {isBlank && <span>Blank</span>}
+      {isEmpty && <span>Empty</span>}
+      {isError && <span>{JSON.stringify(error)}</span>}
       {isOk && <CommitsList commits={commits.entries} />}
     </div>
   );

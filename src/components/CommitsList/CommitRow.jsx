@@ -5,7 +5,7 @@ const CommitRow = ({ commit }) => {
   return (
     <div className="columns CommitRow">
       <div className="column is-2" title={commit.author.email}>
-        <figure className="image is-24x24">
+        <figure className="image is-28x28">
           <img className="is-rounded" src={commit.author.avatarUrl} alt={commit.author.name} />
         </figure>
         <strong>{commit.author.name}</strong>

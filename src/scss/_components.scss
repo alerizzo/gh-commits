@@ -27,6 +27,12 @@ fieldset[disabled] .select select,
   box-shadow: none;
   color: rgba($black, 0.2);
 }
+.image {
+  .is-28x28 {
+    height: 28px;
+    width: 28px;
+  }
+}
 
 .RepositorySearch {
   max-width: 800px;
