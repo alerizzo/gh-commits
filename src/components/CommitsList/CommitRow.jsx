@@ -1,4 +1,5 @@
 import React from 'react';
+import { Skeleton } from 'components';
 const moment = require('moment');
 
 const CommitRow = ({ commit }) => {
@@ -36,10 +37,19 @@ CommitRow.Header = () => {
 CommitRow.Skeleton = ({ loading }) => {
   return (
     <div className="columns CommitRow">
-      <div className="column is-2"></div>
-      <div className="column is-2"></div>
-      <div className="column is-5"></div>
-      <div className="column is-3"></div>
+      <div className="column is-2">
+        <Skeleton.Circle loading={loading} size="28px" />
+        <Skeleton.Text loading={loading} size="60%" />
+      </div>
+      <div className="column is-2">
+        <Skeleton.Text loading={loading} size="50%" />
+      </div>
+      <div className="column is-5">
+        <Skeleton.Text loading={loading} size="70%" />
+      </div>
+      <div className="column is-3">
+        <Skeleton.Text loading={loading} size="50%" />
+      </div>
     </div>
   );
 };

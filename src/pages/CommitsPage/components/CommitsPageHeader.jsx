@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { TextInput } from 'components';
 import CommitRow from 'components/CommitsList/CommitRow';
+import { useInput } from 'lib/hooks';
 
 export default function CommitsPageHeader({ onSearch, repository, disabled, showTableHeader }) {
+  const searchInput = useInput('');
+
+  useEffect(() => {
+    onSearch && onSearch(searchInput.value);
+  }, [searchInput.value, onSearch]);
+
   return (
     <div className="CommitsPageHeader">
       <h1 className="title is-3">Commits list</h1>
@@ -16,7 +23,12 @@ export default function CommitsPageHeader({ onSearch, repository, disabled, show
             </span>
           )}
         </label>
-        <TextInput style={{ maxWidth: '50%' }} disabled={disabled} placeholder="Search ..." />
+        <TextInput
+          style={{ maxWidth: '50%' }}
+          disabled={disabled}
+          placeholder="Search ..."
+          {...searchInput}
+        />
       </div>
       {showTableHeader && (
         <div className="CommitsPageHeader_TableHeader">

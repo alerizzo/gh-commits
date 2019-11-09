@@ -5,12 +5,14 @@
     &:after {
       position: absolute;
       content: attr(data-error);
-      right: 1rem;
       color: $danger;
-      height: 100%;
       align-items: center;
       display: flex;
-      top: 0;
+      right: 1px;
+      height: calc(100% - 2px);
+      top: 1px;
+      border-radius: 4px;
+      padding: 0 16px;
     }
   }
 }
@@ -27,10 +29,48 @@ fieldset[disabled] .select select,
   box-shadow: none;
   color: rgba($black, 0.2);
 }
-.image {
-  .is-28x28 {
-    height: 28px;
-    width: 28px;
+
+.image.is-28x28 {
+  height: 28px;
+  width: 28px;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0px;
+  }
+
+  100% {
+    background-position: 600px;
+  }
+}
+
+.Skeleton {
+  background-color: $text;
+  opacity: 0.15;
+
+  &.loading {
+    background-image: linear-gradient(
+      90deg,
+      rgba($white, 0) 0px,
+      rgba($white, 0.5) 40px,
+      rgba($white, 0) 80px
+    );
+    background-size: 600px;
+    animation: shine 2s infinite linear;
+  }
+
+  &.Skeleton_Circle {
+    border-radius: 100%;
+  }
+
+  &.Skeleton_Text {
+    height: 1rem;
+    border-radius: $radius;
+  }
+
+  & + .Skeleton {
+    margin-left: 8px;
   }
 }
 
@@ -48,5 +88,23 @@ fieldset[disabled] .select select,
 
   label {
     white-space: nowrap;
+  }
+}
+
+.CommitsListPlaceholder {
+  position: relative;
+  margin-top: 32px;
+
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    padding-bottom: 32px;
   }
 }

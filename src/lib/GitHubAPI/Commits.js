@@ -13,7 +13,7 @@ const getCommitsQuery = ({ owner, repository, refName, first, after }) => `{
       target {
         ... on Commit {
           id
-          history(first: ${first || '20'}${after ? `, after: "${after}"` : ''}) {
+          history(first: ${first || '30'}${after ? `, after: "${after}"` : ''}) {
             pageInfo {
               hasNextPage
               endCursor
