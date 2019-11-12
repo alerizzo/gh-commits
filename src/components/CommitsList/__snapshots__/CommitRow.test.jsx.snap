@@ -1,0 +1,202 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CommitRow /> render 1`] = `
+<div
+  className="columns CommitRow"
+>
+  <div
+    className="column is-2"
+  >
+    <div
+      className="Skeleton Skeleton_Circle "
+      style={
+        Object {
+          "height": "28px",
+          "width": "28px",
+        }
+      }
+    />
+    <div
+      className="Skeleton Skeleton_Text "
+      style={
+        Object {
+          "width": "60%",
+        }
+      }
+    />
+  </div>
+  <div
+    className="column is-2"
+  >
+    <div
+      className="Skeleton Skeleton_Text "
+      style={
+        Object {
+          "width": "50%",
+        }
+      }
+    />
+  </div>
+  <div
+    className="column is-5"
+  >
+    <div
+      className="Skeleton Skeleton_Text "
+      style={
+        Object {
+          "width": "70%",
+        }
+      }
+    />
+  </div>
+  <div
+    className="column is-3"
+  >
+    <div
+      className="Skeleton Skeleton_Text "
+      style={
+        Object {
+          "width": "50%",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`<CommitRow commit={ ... } /> render 1`] = `
+<div
+  className="columns CommitRow"
+>
+  <div
+    className="column is-2"
+    title="tdurden@paperstsoap.co"
+  >
+    <figure
+      className="image is-28x28"
+    >
+      <img
+        alt="Tyler Durden"
+        className="is-rounded"
+        src="https://avatars0.githubusercontent.com/u/92839?v=4"
+      />
+    </figure>
+    <strong>
+      Tyler Durden
+    </strong>
+  </div>
+  <div
+    className="column is-2"
+  >
+    172bdb7
+    <span
+      className="tag is-primary is-light"
+    >
+      Merge
+    </span>
+  </div>
+  <div
+    className="column is-5"
+  >
+    Sample message headline
+  </div>
+  <div
+    className="column is-3"
+  >
+    <time>
+      a month ago
+    </time>
+  </div>
+</div>
+`;
+
+exports[`<CommitRow.Header /> render 1`] = `
+<div
+  className="columns CommitRow CommitRow_Header"
+>
+  <div
+    className="column is-2"
+  >
+    Author
+  </div>
+  <div
+    className="column is-2"
+  >
+    Commit
+  </div>
+  <div
+    className="column is-5"
+  >
+    Message
+  </div>
+  <div
+    className="column is-3"
+  >
+    Created
+  </div>
+</div>
+`;
+
+exports[`<CommitRow.Skeleton /> render 1`] = `
+<div
+  className="columns CommitRow"
+>
+  <div
+    className="column is-2"
+  >
+    <div
+      className="Skeleton Skeleton_Circle "
+      style={
+        Object {
+          "height": "28px",
+          "width": "28px",
+        }
+      }
+    />
+    <div
+      className="Skeleton Skeleton_Text "
+      style={
+        Object {
+          "width": "60%",
+        }
+      }
+    />
+  </div>
+  <div
+    className="column is-2"
+  >
+    <div
+      className="Skeleton Skeleton_Text "
+      style={
+        Object {
+          "width": "50%",
+        }
+      }
+    />
+  </div>
+  <div
+    className="column is-5"
+  >
+    <div
+      className="Skeleton Skeleton_Text "
+      style={
+        Object {
+          "width": "70%",
+        }
+      }
+    />
+  </div>
+  <div
+    className="column is-3"
+  >
+    <div
+      className="Skeleton Skeleton_Text "
+      style={
+        Object {
+          "width": "50%",
+        }
+      }
+    />
+  </div>
+</div>
+`;

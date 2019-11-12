@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { TextInput } from 'components';
 import CommitRow from 'components/CommitsList/CommitRow';
 import { useInput } from 'lib/hooks';
+import './CommitsPageHeader.scss';
 
 export default function CommitsPageHeader({
   onSearch,
@@ -18,7 +19,7 @@ export default function CommitsPageHeader({
 
   return (
     <div className="CommitsPageHeader">
-      <h1 className="title is-3">Commits list</h1>
+      <h1 className="title is-3">Commits List</h1>
       <div className="field">
         <label className="label is-size-6">
           Search

@@ -1,6 +1,7 @@
 import React from 'react';
 import NavMenu from './NavMenu';
 import logo from './logo.svg';
+import './Layout.scss';
 
 const Layout = ({ navbar, children }) => {
   return (

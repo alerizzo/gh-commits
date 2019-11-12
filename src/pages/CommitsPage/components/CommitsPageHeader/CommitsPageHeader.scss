@@ -1,0 +1,17 @@
+@import '../../../../scss/variables';
+
+.CommitsPageHeader {
+  background-color: $grey-lighter;
+  padding: $gap;
+  position: sticky;
+  top: $navbar-height;
+  z-index: 1;
+
+  .CommitsPageHeader_TableHeader {
+    margin: 0 $gap * -1 $gap * -1;
+    padding: $gap $gap 12px;
+    background: $white;
+    font-size: $size-7;
+    text-transform: uppercase;
+  }
+}

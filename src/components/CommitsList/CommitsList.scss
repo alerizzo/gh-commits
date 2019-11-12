@@ -1,0 +1,42 @@
+@import '../../scss/variables';
+
+.CommitsList {
+  padding: 0 $gap $gap;
+
+  .columns:first-child {
+    margin-top: 0;
+  }
+
+  .column {
+    align-items: center;
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+
+    .tag {
+      margin-left: 8px;
+    }
+
+    .image {
+      margin-right: 8px;
+    }
+  }
+}
+
+.CommitsList_Placeholder {
+  position: relative;
+  margin-top: 32px;
+
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    padding-bottom: 32px;
+  }
+}

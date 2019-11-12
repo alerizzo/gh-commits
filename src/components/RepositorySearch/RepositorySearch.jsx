@@ -2,6 +2,7 @@ import React from 'react';
 import { useInput } from 'lib/hooks';
 import { TextInput, Button } from 'components';
 import { parseGitHubURL } from 'lib/GitHubAPI/Commits';
+import './RepositorySearch.scss';
 
 function RepositorySearch({ onLoadRepository }) {
   const repositoryUrlInput = useInput('');
@@ -23,6 +24,7 @@ function RepositorySearch({ onLoadRepository }) {
     <form className="RepositorySearch" onSubmit={handleSubmit}>
       <label>Repository URL</label>
       <TextInput
+        name="repository_url"
         className={!isEmpty && isValidUrl ? 'is-primary' : null}
         isInvalid={!isEmpty && !isValidUrl}
         invalidMessage={'This URL is not valid'}

@@ -2,6 +2,8 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 
+import './NavMenu.scss';
+
 import dashboard from './icons/dashboard.svg';
 import commits from './icons/commits.svg';
 import files from './icons/files.svg';

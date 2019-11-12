@@ -1,0 +1,32 @@
+$navbar-height: 63px;
+$navbar-padding-vertical: 8px;
+
+$grey-darker: #0e1e35; // $dark
+$grey-dark: #374249; // $text
+$grey: #4c6083; // layout text, nav input border,
+$grey-light: #c9d8ef; // nav input placeholder
+$grey-lighter: #f4f9ff;
+
+$border: #e5ecf5;
+$background: #f4f9ff;
+
+$primary: #2a6cff;
+
+$nav-menu-bck: #f1faff;
+$nav-menu-border: $border;
+$footer-bck: $grey-lighter;
+$layout-text: $grey;
+
+$size-1: 3rem;
+$size-2: 2rem;
+$size-3: 1.35rem;
+$size-4: 1.15rem;
+$size-5: 1rem;
+$size-6: 0.85rem;
+$size-7: 0.6rem;
+
+$family-sans-serif: 'Clear Sans', BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial',
+  sans-serif;
+
+@import '~bulma/sass/utilities/_all';

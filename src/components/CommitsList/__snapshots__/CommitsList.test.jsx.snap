@@ -1,0 +1,191 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CommitsList /> render 1`] = `
+<div
+  className="CommitsList"
+>
+  <div
+    className="columns CommitRow"
+  >
+    <div
+      className="column is-2"
+    >
+      <div
+        className="Skeleton Skeleton_Circle "
+        style={
+          Object {
+            "height": "28px",
+            "width": "28px",
+          }
+        }
+      />
+      <div
+        className="Skeleton Skeleton_Text "
+        style={
+          Object {
+            "width": "60%",
+          }
+        }
+      />
+    </div>
+    <div
+      className="column is-2"
+    >
+      <div
+        className="Skeleton Skeleton_Text "
+        style={
+          Object {
+            "width": "50%",
+          }
+        }
+      />
+    </div>
+    <div
+      className="column is-5"
+    >
+      <div
+        className="Skeleton Skeleton_Text "
+        style={
+          Object {
+            "width": "70%",
+          }
+        }
+      />
+    </div>
+    <div
+      className="column is-3"
+    >
+      <div
+        className="Skeleton Skeleton_Text "
+        style={
+          Object {
+            "width": "50%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="columns CommitRow"
+  >
+    <div
+      className="column is-2"
+    >
+      <div
+        className="Skeleton Skeleton_Circle "
+        style={
+          Object {
+            "height": "28px",
+            "width": "28px",
+          }
+        }
+      />
+      <div
+        className="Skeleton Skeleton_Text "
+        style={
+          Object {
+            "width": "60%",
+          }
+        }
+      />
+    </div>
+    <div
+      className="column is-2"
+    >
+      <div
+        className="Skeleton Skeleton_Text "
+        style={
+          Object {
+            "width": "50%",
+          }
+        }
+      />
+    </div>
+    <div
+      className="column is-5"
+    >
+      <div
+        className="Skeleton Skeleton_Text "
+        style={
+          Object {
+            "width": "70%",
+          }
+        }
+      />
+    </div>
+    <div
+      className="column is-3"
+    >
+      <div
+        className="Skeleton Skeleton_Text "
+        style={
+          Object {
+            "width": "50%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="columns CommitRow"
+  >
+    <div
+      className="column is-2"
+    >
+      <div
+        className="Skeleton Skeleton_Circle "
+        style={
+          Object {
+            "height": "28px",
+            "width": "28px",
+          }
+        }
+      />
+      <div
+        className="Skeleton Skeleton_Text "
+        style={
+          Object {
+            "width": "60%",
+          }
+        }
+      />
+    </div>
+    <div
+      className="column is-2"
+    >
+      <div
+        className="Skeleton Skeleton_Text "
+        style={
+          Object {
+            "width": "50%",
+          }
+        }
+      />
+    </div>
+    <div
+      className="column is-5"
+    >
+      <div
+        className="Skeleton Skeleton_Text "
+        style={
+          Object {
+            "width": "70%",
+          }
+        }
+      />
+    </div>
+    <div
+      className="column is-3"
+    >
+      <div
+        className="Skeleton Skeleton_Text "
+        style={
+          Object {
+            "width": "50%",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;

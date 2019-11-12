@@ -1,0 +1,62 @@
+@import '../../scss/variables';
+
+.Layout {
+  background: $background;
+  min-height: calc(100vh - #{$navbar-height});
+
+  .Layout-body {
+    min-height: calc(100vh - #{$navbar-height});
+    display: flex;
+    flex-direction: column;
+
+    main {
+      flex: 1 0 auto;
+      background: $white;
+    }
+
+    footer {
+      flex-shrink: 0;
+      background-color: $footer-bck;
+      font-size: $size-7;
+      color: $layout-text;
+      padding: $gap / 2 $gap;
+    }
+  }
+}
+
+.navbar {
+  align-items: stretch;
+  display: flex;
+
+  .navbar-brand .navbar-item {
+    width: 80px;
+    justify-content: center;
+  }
+}
+
+.navbar-content {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+  input[type='text'].input {
+    background-color: transparent;
+    color: $white;
+
+    &:not(.is-danger):not(.is-primary) {
+      border-color: $grey;
+    }
+
+    &::placeholder {
+      color: $grey-light;
+    }
+
+    &.is-danger {
+      border-color: $red;
+    }
+  }
+
+  .control[data-error]::after {
+    background: $dark;
+  }
+}

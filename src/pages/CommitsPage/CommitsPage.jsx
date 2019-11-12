@@ -2,8 +2,7 @@ import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { fetchCommits } from 'lib/GitHubAPI/Commits';
 import debounce from 'lodash.debounce';
 
-import CommitsPageHeader from './components/CommitsPageHeader';
-import CommitsListPlaceholder from './components/CommitsListPlaceholder';
+import CommitsPageHeader from './components/CommitsPageHeader/CommitsPageHeader';
 
 import { CommitsList, Page } from 'components';
 
@@ -127,11 +126,13 @@ function CommitsPage({ repository }) {
         disabled={!isOk}
         showTableHeader={isOk}
       />
-      {loading && <CommitsListPlaceholder message="Fetching commits ..." loading />}
-      {isBlank && <CommitsListPlaceholder message="Your commits will show up here" />}
-      {isEmpty && <CommitsListPlaceholder message="There are no commits in this respository yet" />}
+      {loading && <CommitsList.Placeholder message="Fetching commits ..." loading />}
+      {isBlank && <CommitsList.Placeholder message="Your commits will show up here" />}
+      {isEmpty && (
+        <CommitsList.Placeholder message="There are no commits in this respository yet" />
+      )}
       {isError && (
-        <CommitsListPlaceholder message="We couldn’t get the commits for this repository" />
+        <CommitsList.Placeholder message="We couldn’t get the commits for this repository" />
       )}
       {isOk && (
         <CommitsList ref={listRef} commits={commitsToRender} hasLoadingRow={commits.hasNextPage} />

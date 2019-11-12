@@ -1,23 +1,17 @@
 import React from 'react';
 import { Skeleton } from 'components';
-//import Gravatar from 'react-gravatar';
+import './CommitRow.scss';
 
 const moment = require('moment');
 
 const CommitRow = ({ commit }) => {
+  if (!commit) return <CommitRow.Skeleton />;
+
   return (
     <div className="columns CommitRow">
       <div className="column is-2" title={commit.author.email}>
         <figure className="image is-28x28">
           <img className="is-rounded" src={commit.author.avatarUrl} alt={commit.author.name} />
-          {/* author.avatarUrl is always present  */}
-          {/* <Gravatar
-            email={commit.author.email}
-            size={28}
-            rating="pg"
-            default={commit.author.avatarUrl}
-            className="is-rounded"
-          /> */}
         </figure>
         <strong>{commit.author.name}</strong>
       </div>

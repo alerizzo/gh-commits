@@ -1,0 +1,17 @@
+@import '../../scss/variables';
+
+.CommitRow {
+  border-bottom: solid 1px $border;
+
+  &.CommitRow_Header {
+    border-bottom: solid 2px $border;
+  }
+
+  .column {
+    padding: 0.55rem 0.75rem;
+  }
+
+  figure {
+    flex-shrink: 0;
+  }
+}

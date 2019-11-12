@@ -1,40 +1,13 @@
-$navbar-height: 63px;
-$navbar-padding-vertical: 8px;
+@import './scss/variables';
+@import './scss/fonts';
 
-$grey-darker: #0e1e35; // $dark
-$grey-dark: #374249; // $text
-$grey: #4c6083; // layout text, nav input border,
-$grey-light: #c9d8ef; // nav input placeholder
-$grey-lighter: #f4f9ff;
-
-$border: #e5ecf5;
-$background: #f4f9ff;
-
-$primary: #2a6cff;
-
-$size-1: 3rem;
-$size-2: 2rem;
-$size-3: 1.35rem;
-$size-4: 1.15rem;
-$size-5: 1rem;
-$size-6: 0.85rem;
-$size-7: 0.6rem;
-
-$family-sans-serif: 'ClearSans', BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial',
-  sans-serif;
-
-@import '~bulma/sass/utilities/_all';
 @import '~bulma/sass/base/_all';
 @import '~bulma/sass/elements/_all';
 @import '~bulma/sass/form/_all';
 @import '~bulma/sass/components/_all';
 @import '~bulma/sass/grid/_all';
 
-@import './scss/fonts';
-@import './scss/layout';
-@import './scss/components';
-@import './scss/commits';
+@import './scss/bulma_overrides';
 
 body {
   font-size: $size-6;

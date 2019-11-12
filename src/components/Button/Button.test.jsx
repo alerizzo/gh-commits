@@ -1,11 +1,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import CommitsList from './CommitsList';
+import { Button } from 'components';
 
-describe('<CommitsList />', () => {
+describe('<Button />', () => {
   const defaultProps = {};
-  const wrapper = renderer.create(<CommitsList {...defaultProps} />);
+  const wrapper = renderer.create(<Button {...defaultProps} />);
 
   test('render', () => {
     expect(wrapper).toMatchSnapshot();

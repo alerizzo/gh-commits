@@ -1,0 +1,30 @@
+@import '../../scss/variables';
+
+.Skeleton {
+  background-color: $text;
+  opacity: 0.15;
+
+  &.loading {
+    background-image: linear-gradient(
+      90deg,
+      rgba($white, 0) 0px,
+      rgba($white, 0.5) 40px,
+      rgba($white, 0) 80px
+    );
+    background-size: 600px;
+    animation: shine 2s infinite linear;
+  }
+
+  &.Skeleton_Circle {
+    border-radius: 100%;
+  }
+
+  &.Skeleton_Text {
+    height: 1rem;
+    border-radius: $radius;
+  }
+
+  & + .Skeleton {
+    margin-left: 8px;
+  }
+}

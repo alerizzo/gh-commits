@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> render 1`] = `
+<button
+  className="button is-primary has-text-weight-bold"
+  type="button"
+/>
+`;
