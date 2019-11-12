@@ -1,5 +1,7 @@
 import React from 'react';
 import { Skeleton } from 'components';
+//import Gravatar from 'react-gravatar';
+
 const moment = require('moment');
 
 const CommitRow = ({ commit }) => {
@@ -8,6 +10,14 @@ const CommitRow = ({ commit }) => {
       <div className="column is-2" title={commit.author.email}>
         <figure className="image is-28x28">
           <img className="is-rounded" src={commit.author.avatarUrl} alt={commit.author.name} />
+          {/* author.avatarUrl is always present  */}
+          {/* <Gravatar
+            email={commit.author.email}
+            size={28}
+            rating="pg"
+            default={commit.author.avatarUrl}
+            className="is-rounded"
+          /> */}
         </figure>
         <strong>{commit.author.name}</strong>
       </div>

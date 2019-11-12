@@ -61,12 +61,27 @@ export const parseGitHubURL = url => {
   return null;
 };
 
-export const fetchCommits = async (repository, options) => {
+export const fetchCommits = async (
+  repository /* { owner: string, repository: string, [ refName: string ] } */,
+  options /* { first: number, after: string } */
+) => {
   try {
     const result = await gitHubAPI.post('', {
       query: getCommitsQuery({ ...repository, ...options }),
     });
 
+    // expected errors
+    if (result.errors) throw new Error(result.errors[0].message);
+
+    // empty repository
+    if (result.data.data.repository.ref === null) {
+      return {
+        entries: [],
+        hasNextPage: false,
+      };
+    }
+
+    // everything's ok
     const history = result.data.data.repository.ref.target.history;
 
     return {

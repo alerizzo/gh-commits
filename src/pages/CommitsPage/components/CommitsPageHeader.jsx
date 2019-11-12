@@ -3,7 +3,13 @@ import { TextInput } from 'components';
 import CommitRow from 'components/CommitsList/CommitRow';
 import { useInput } from 'lib/hooks';
 
-export default function CommitsPageHeader({ onSearch, repository, disabled, showTableHeader }) {
+export default function CommitsPageHeader({
+  onSearch,
+  isSearching,
+  repository,
+  disabled,
+  showTableHeader,
+}) {
   const searchInput = useInput('');
 
   useEffect(() => {
@@ -24,8 +30,9 @@ export default function CommitsPageHeader({ onSearch, repository, disabled, show
           )}
         </label>
         <TextInput
-          style={{ maxWidth: '50%' }}
+          style={{ width: '276px' }}
           disabled={disabled}
+          isLoading={isSearching}
           placeholder="Search ..."
           {...searchInput}
         />

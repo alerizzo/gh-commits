@@ -30,6 +30,17 @@ fieldset[disabled] .select select,
   color: rgba($black, 0.2);
 }
 
+.button.is-loading::after,
+.loader,
+.select.is-loading::after,
+.control.is-loading::after {
+  border: 2px solid $primary;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  height: 1.25em;
+  width: 1.25em;
+}
+
 .image.is-28x28 {
   height: 28px;
   width: 28px;

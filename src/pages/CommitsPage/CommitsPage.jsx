@@ -8,6 +8,8 @@ import CommitsListPlaceholder from './components/CommitsListPlaceholder';
 import { CommitsList, Page } from 'components';
 
 function CommitsPage({ repository }) {
+  const PAGE_SIZE = 30;
+
   const [commits, setCommits] = useState(null);
   const [error, setError] = useState(null);
 
@@ -15,6 +17,7 @@ function CommitsPage({ repository }) {
   const [loadingMore, setLoadingMore] = useState(false);
 
   const [searchTerms, setSearchTerms] = useState(null);
+  const [visibleRows, setVisibleRows] = useState(PAGE_SIZE);
 
   const listRef = useRef(null);
 
@@ -22,12 +25,13 @@ function CommitsPage({ repository }) {
   useEffect(() => {
     if (repository && (!commits || commits.url !== repository.url)) {
       setLoading(true);
-      fetchCommits(repository)
+      fetchCommits(repository, { first: PAGE_SIZE })
         .then(result => {
           // clear previous error, if any
           if (error) setError(null);
 
           // store result in state, and add repository metadata
+          setVisibleRows(PAGE_SIZE);
           setCommits({ ...repository, ...result });
           setLoading(false);
         })
@@ -40,8 +44,9 @@ function CommitsPage({ repository }) {
   }, [repository, commits, error]);
 
   const handleSearch = useCallback(
-    debounce(searchTerms => {
-      setSearchTerms((searchTerms || '').toLowerCase());
+    debounce(searchInput => {
+      if (searchInput === '') setVisibleRows(PAGE_SIZE);
+      setSearchTerms((searchInput || '').toLowerCase());
     }, 500),
     []
   );
@@ -50,7 +55,7 @@ function CommitsPage({ repository }) {
     commits => {
       if (!loadingMore && commits.hasNextPage) {
         setLoadingMore(true);
-        fetchCommits(repository, { after: commits.endCursor })
+        fetchCommits(repository, { after: commits.endCursor, first: searchTerms ? 100 : PAGE_SIZE })
           .then(result => {
             // add entries to previous result, and update cursors
             setCommits(prevCommits => {
@@ -67,22 +72,31 @@ function CommitsPage({ repository }) {
           .catch(err => {});
       }
     },
-    [loadingMore, repository]
+    [loadingMore, repository, searchTerms]
   );
 
   useEffect(() => {
-    // check if I need more rows
+    // check if I need more rows while searching
     if (!loadingMore && listRef && listRef.current) {
       const listBoundaries = listRef.current.getBoundingClientRect();
       if (
         listBoundaries.bottom - 50 <
-        (window.innerHeight || document.documentElement.clientHeight)
+          (window.innerHeight || document.documentElement.clientHeight) &&
+        searchTerms
       ) {
         loadMoreCommits(commits);
       }
     }
   }, [commits, searchTerms, loadMoreCommits, loadingMore]);
 
+  const handleScrollEnd = useCallback(() => {
+    setVisibleRows(visibleRows => (visibleRows += PAGE_SIZE));
+    if (!(!searchTerms && commits.entries.length > visibleRows)) {
+      loadMoreCommits(commits);
+    }
+  }, [commits, loadMoreCommits, searchTerms, visibleRows]);
+
+  // define how commits will be filtered
   const entriesFilter = commit =>
     (commit.abbreviatedOid && commit.abbreviatedOid.toLowerCase().indexOf(searchTerms) >= 0) ||
     (commit.author.name && commit.author.name.toLowerCase().indexOf(searchTerms) >= 0) ||
@@ -96,11 +110,19 @@ function CommitsPage({ repository }) {
     isError = !loading && !!error,
     isOk = !loading && !error && commits && commits.entries && commits.entries.length > 0;
 
+  // get the actual subset of commits to render
+  const commitsToRender = isOk
+    ? searchTerms
+      ? commits.entries.filter(entriesFilter)
+      : commits.entries.slice(0, visibleRows)
+    : [];
+
   // render component
   return (
-    <Page title="Commits" className="CommitsPage" onScrollEnd={() => loadMoreCommits(commits)}>
+    <Page title="Commits" className="CommitsPage" onScrollEnd={handleScrollEnd}>
       <CommitsPageHeader
         onSearch={handleSearch}
+        isSearching={loadingMore && searchTerms}
         repository={repository}
         disabled={!isOk}
         showTableHeader={isOk}
@@ -112,11 +134,7 @@ function CommitsPage({ repository }) {
         <CommitsListPlaceholder message="We couldn’t get the commits for this repository" />
       )}
       {isOk && (
-        <CommitsList
-          ref={listRef}
-          commits={searchTerms ? commits.entries.filter(entriesFilter) : commits.entries}
-          hasLoadingRow={commits.hasNextPage}
-        />
+        <CommitsList ref={listRef} commits={commitsToRender} hasLoadingRow={commits.hasNextPage} />
       )}
     </Page>
   );
