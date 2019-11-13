@@ -5,6 +5,10 @@ import './CommitsList.scss';
 const CommitsList = React.forwardRef(({ commits, hasLoadingRow }, ref) => {
   if (!commits) return <CommitsList.Skeleton />;
 
+  if (commits.length === 0) {
+    return <CommitsList.Placeholder message="There are no commits to show" />;
+  }
+
   return (
     <div className="CommitsList" ref={ref}>
       {commits.map(commit => (

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
-import { fetchCommits } from 'lib/GitHubAPI/Commits';
+import { fetchCommits, filterCommits } from 'lib/GitHubAPI/Commits';
 import debounce from 'lodash.debounce';
 
 import CommitsPageHeader from './components/CommitsPageHeader/CommitsPageHeader';
@@ -45,7 +45,7 @@ function CommitsPage({ repository }) {
   const handleSearch = useCallback(
     debounce(searchInput => {
       if (searchInput === '') setVisibleRows(PAGE_SIZE);
-      setSearchTerms((searchInput || '').toLowerCase());
+      setSearchTerms(searchInput || '');
     }, 500),
     []
   );
@@ -95,13 +95,6 @@ function CommitsPage({ repository }) {
     }
   }, [commits, loadMoreCommits, searchTerms, visibleRows]);
 
-  // define how commits will be filtered
-  const entriesFilter = commit =>
-    (commit.abbreviatedOid && commit.abbreviatedOid.toLowerCase().indexOf(searchTerms) >= 0) ||
-    (commit.author.name && commit.author.name.toLowerCase().indexOf(searchTerms) >= 0) ||
-    (commit.author.email && commit.author.email.toLowerCase().indexOf(searchTerms) >= 0) ||
-    (commit.messageHeadline && commit.messageHeadline.toLowerCase().indexOf(searchTerms) >= 0);
-
   // define different possible states of my list
   const isBlank = !loading && !repository,
     isEmpty =
@@ -112,7 +105,7 @@ function CommitsPage({ repository }) {
   // get the actual subset of commits to render
   const commitsToRender = isOk
     ? searchTerms
-      ? commits.entries.filter(entriesFilter)
+      ? filterCommits(commits.entries, searchTerms)
       : commits.entries.slice(0, visibleRows)
     : [];
 

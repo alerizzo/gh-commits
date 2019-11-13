@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RepositorySearch /> render 1`] = `
+<form
+  className="RepositorySearch"
+  onSubmit={[Function]}
+>
+  <label>
+    Repository URL
+  </label>
+  <div
+    className="TextInput control "
+    data-error={null}
+  >
+    <input
+      className="input  "
+      name="repository_url"
+      onChange={[Function]}
+      placeholder="Add your repository URL here"
+      type="text"
+      value=""
+    />
+  </div>
+  <button
+    className="button is-primary has-text-weight-bold"
+    disabled={true}
+    type="submit"
+  >
+    Load repository
+  </button>
+</form>
+`;

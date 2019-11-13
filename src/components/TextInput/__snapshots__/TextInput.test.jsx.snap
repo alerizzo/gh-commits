@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextInput /> render 1`] = `
+<div
+  className="TextInput control "
+  data-error={null}
+>
+  <input
+    className="input  "
+    type="text"
+  />
+</div>
+`;
+
+exports[`<TextInput isInvalid invalidMessage="Error text" /> render 1`] = `
+<div
+  className="TextInput control "
+  data-error="Error text"
+>
+  <input
+    className="input is-danger "
+    type="text"
+  />
+</div>
+`;
+
+exports[`<TextInput isLoading /> render 1`] = `
+<div
+  className="TextInput control is-loading"
+  data-error={null}
+>
+  <input
+    className="input  "
+    type="text"
+  />
+</div>
+`;

@@ -93,3 +93,15 @@ export const fetchCommits = async (
     throw err;
   }
 };
+
+export const filterCommits = (commits, searchTerms) => {
+  const q = searchTerms.toLowerCase();
+
+  return commits.filter(
+    commit =>
+      (commit.abbreviatedOid && commit.abbreviatedOid.toLowerCase().indexOf(q) >= 0) ||
+      (commit.author.name && commit.author.name.toLowerCase().indexOf(q) >= 0) ||
+      (commit.author.email && commit.author.email.toLowerCase().indexOf(q) >= 0) ||
+      (commit.messageHeadline && commit.messageHeadline.toLowerCase().indexOf(q) >= 0)
+  );
+};

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Skeleton.Circle /> render 1`] = `
+<div
+  className="Skeleton Skeleton_Circle "
+  style={
+    Object {
+      "height": undefined,
+      "width": undefined,
+    }
+  }
+/>
+`;
+
+exports[`<Skeleton.Text /> render 1`] = `
+<div
+  className="Skeleton Skeleton_Text "
+  style={
+    Object {
+      "width": undefined,
+    }
+  }
+/>
+`;

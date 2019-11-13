@@ -1,0 +1,373 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Layout /> render 1`] = `
+<div
+  className="Layout"
+>
+  <nav
+    aria-label="main navigation"
+    className="navbar is-fixed-top is-dark"
+    role="navigation"
+  >
+    <div
+      className="navbar-brand"
+    >
+      <a
+        className="navbar-item"
+        href="#no"
+      >
+        <img
+          alt="logo"
+          height="34"
+          src="logo.svg"
+          width="34"
+        />
+      </a>
+    </div>
+    <div
+      className="navbar-content"
+    />
+  </nav>
+  <div
+    className="columns"
+    style={
+      Object {
+        "margin": 0,
+      }
+    }
+  >
+    <div
+      className="column is-narrow"
+      style={
+        Object {
+          "padding": "0",
+          "width": "80px",
+        }
+      }
+    >
+      <div
+        className="NavMenu"
+      >
+        <div
+          className="NavMenu-section"
+        >
+          <button
+            className="NavMenuTextButton button is-small"
+          >
+            <span
+              className="icon is-small"
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-angle-left fa-w-8 "
+                data-icon="angle-left"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 256 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </span>
+            <span>
+              Team
+            </span>
+          </button>
+        </div>
+        <div
+          className="NavMenu-section"
+        >
+          <button
+            className="NavMenuButton button "
+          >
+            <img
+              alt="Dashboard"
+              src="dashboard.svg"
+            />
+            <span>
+              Dashboard
+            </span>
+          </button>
+          <button
+            className="NavMenuButton button is-active"
+          >
+            <img
+              alt="Commits"
+              src="commits.svg"
+            />
+            <span>
+              Commits
+            </span>
+          </button>
+          <button
+            className="NavMenuButton button "
+          >
+            <img
+              alt="Files"
+              src="files.svg"
+            />
+            <span>
+              Files
+            </span>
+          </button>
+          <button
+            className="NavMenuButton button "
+          >
+            <img
+              alt="Issues"
+              src="issues.svg"
+            />
+            <span>
+              Issues
+            </span>
+          </button>
+          <button
+            className="NavMenuButton button "
+          >
+            <img
+              alt="Pull Requests"
+              src="pull_requests.svg"
+            />
+            <span>
+              Pull Requests
+            </span>
+          </button>
+        </div>
+        <div
+          className="NavMenu-section"
+        >
+          <button
+            className="NavMenuButton button "
+          >
+            <img
+              alt="Code Patterns"
+              src="code_patterns.svg"
+            />
+            <span>
+              Code Patterns
+            </span>
+          </button>
+          <button
+            className="NavMenuButton button "
+          >
+            <img
+              alt="Settings"
+              src="settings.svg"
+            />
+            <span>
+              Settings
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="column Layout-body"
+      style={
+        Object {
+          "padding": "0",
+        }
+      }
+    >
+      <main />
+      <footer>
+        © 2019 CODACY - AUTOMATED CODE REVIEW
+      </footer>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Layout>...</Layout> render 1`] = `
+<div
+  className="Layout"
+>
+  <nav
+    aria-label="main navigation"
+    className="navbar is-fixed-top is-dark"
+    role="navigation"
+  >
+    <div
+      className="navbar-brand"
+    >
+      <a
+        className="navbar-item"
+        href="#no"
+      >
+        <img
+          alt="logo"
+          height="34"
+          src="logo.svg"
+          width="34"
+        />
+      </a>
+    </div>
+    <div
+      className="navbar-content"
+    />
+  </nav>
+  <div
+    className="columns"
+    style={
+      Object {
+        "margin": 0,
+      }
+    }
+  >
+    <div
+      className="column is-narrow"
+      style={
+        Object {
+          "padding": "0",
+          "width": "80px",
+        }
+      }
+    >
+      <div
+        className="NavMenu"
+      >
+        <div
+          className="NavMenu-section"
+        >
+          <button
+            className="NavMenuTextButton button is-small"
+          >
+            <span
+              className="icon is-small"
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-angle-left fa-w-8 "
+                data-icon="angle-left"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 256 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </span>
+            <span>
+              Team
+            </span>
+          </button>
+        </div>
+        <div
+          className="NavMenu-section"
+        >
+          <button
+            className="NavMenuButton button "
+          >
+            <img
+              alt="Dashboard"
+              src="dashboard.svg"
+            />
+            <span>
+              Dashboard
+            </span>
+          </button>
+          <button
+            className="NavMenuButton button is-active"
+          >
+            <img
+              alt="Commits"
+              src="commits.svg"
+            />
+            <span>
+              Commits
+            </span>
+          </button>
+          <button
+            className="NavMenuButton button "
+          >
+            <img
+              alt="Files"
+              src="files.svg"
+            />
+            <span>
+              Files
+            </span>
+          </button>
+          <button
+            className="NavMenuButton button "
+          >
+            <img
+              alt="Issues"
+              src="issues.svg"
+            />
+            <span>
+              Issues
+            </span>
+          </button>
+          <button
+            className="NavMenuButton button "
+          >
+            <img
+              alt="Pull Requests"
+              src="pull_requests.svg"
+            />
+            <span>
+              Pull Requests
+            </span>
+          </button>
+        </div>
+        <div
+          className="NavMenu-section"
+        >
+          <button
+            className="NavMenuButton button "
+          >
+            <img
+              alt="Code Patterns"
+              src="code_patterns.svg"
+            />
+            <span>
+              Code Patterns
+            </span>
+          </button>
+          <button
+            className="NavMenuButton button "
+          >
+            <img
+              alt="Settings"
+              src="settings.svg"
+            />
+            <span>
+              Settings
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="column Layout-body"
+      style={
+        Object {
+          "padding": "0",
+        }
+      }
+    >
+      <main>
+        <p>
+          Some content
+        </p>
+      </main>
+      <footer>
+        © 2019 CODACY - AUTOMATED CODE REVIEW
+      </footer>
+    </div>
+  </div>
+</div>
+`;

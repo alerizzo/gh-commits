@@ -1,0 +1,240 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CommitsPage /> render 1`] = `
+<div
+  className="Page CommitsPage"
+>
+  <div
+    className="CommitsPageHeader"
+  >
+    <h1
+      className="title is-3"
+    >
+      Commits List
+    </h1>
+    <div
+      className="field"
+    >
+      <label
+        className="label is-size-6"
+      >
+        Search
+      </label>
+      <div
+        className="TextInput control "
+        data-error={null}
+        style={
+          Object {
+            "width": "276px",
+          }
+        }
+      >
+        <input
+          className="input  "
+          disabled={true}
+          onChange={[Function]}
+          placeholder="Search ..."
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="CommitsList_Placeholder"
+  >
+    <div
+      className="CommitsList"
+    >
+      <div
+        className="columns CommitRow"
+      >
+        <div
+          className="column is-2"
+        >
+          <div
+            className="Skeleton Skeleton_Circle "
+            style={
+              Object {
+                "height": "28px",
+                "width": "28px",
+              }
+            }
+          />
+          <div
+            className="Skeleton Skeleton_Text "
+            style={
+              Object {
+                "width": "60%",
+              }
+            }
+          />
+        </div>
+        <div
+          className="column is-2"
+        >
+          <div
+            className="Skeleton Skeleton_Text "
+            style={
+              Object {
+                "width": "50%",
+              }
+            }
+          />
+        </div>
+        <div
+          className="column is-5"
+        >
+          <div
+            className="Skeleton Skeleton_Text "
+            style={
+              Object {
+                "width": "70%",
+              }
+            }
+          />
+        </div>
+        <div
+          className="column is-3"
+        >
+          <div
+            className="Skeleton Skeleton_Text "
+            style={
+              Object {
+                "width": "50%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="columns CommitRow"
+      >
+        <div
+          className="column is-2"
+        >
+          <div
+            className="Skeleton Skeleton_Circle "
+            style={
+              Object {
+                "height": "28px",
+                "width": "28px",
+              }
+            }
+          />
+          <div
+            className="Skeleton Skeleton_Text "
+            style={
+              Object {
+                "width": "60%",
+              }
+            }
+          />
+        </div>
+        <div
+          className="column is-2"
+        >
+          <div
+            className="Skeleton Skeleton_Text "
+            style={
+              Object {
+                "width": "50%",
+              }
+            }
+          />
+        </div>
+        <div
+          className="column is-5"
+        >
+          <div
+            className="Skeleton Skeleton_Text "
+            style={
+              Object {
+                "width": "70%",
+              }
+            }
+          />
+        </div>
+        <div
+          className="column is-3"
+        >
+          <div
+            className="Skeleton Skeleton_Text "
+            style={
+              Object {
+                "width": "50%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="columns CommitRow"
+      >
+        <div
+          className="column is-2"
+        >
+          <div
+            className="Skeleton Skeleton_Circle "
+            style={
+              Object {
+                "height": "28px",
+                "width": "28px",
+              }
+            }
+          />
+          <div
+            className="Skeleton Skeleton_Text "
+            style={
+              Object {
+                "width": "60%",
+              }
+            }
+          />
+        </div>
+        <div
+          className="column is-2"
+        >
+          <div
+            className="Skeleton Skeleton_Text "
+            style={
+              Object {
+                "width": "50%",
+              }
+            }
+          />
+        </div>
+        <div
+          className="column is-5"
+        >
+          <div
+            className="Skeleton Skeleton_Text "
+            style={
+              Object {
+                "width": "70%",
+              }
+            }
+          />
+        </div>
+        <div
+          className="column is-3"
+        >
+          <div
+            className="Skeleton Skeleton_Text "
+            style={
+              Object {
+                "width": "50%",
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="overlay is-size-5 has-text-weight-bold"
+    >
+      Your commits will show up here
+    </div>
+  </div>
+</div>
+`;

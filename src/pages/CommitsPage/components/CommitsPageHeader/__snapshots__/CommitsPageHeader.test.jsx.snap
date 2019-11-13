@@ -1,0 +1,192 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CommitsPageHeader /> render 1`] = `
+<div
+  className="CommitsPageHeader"
+>
+  <h1
+    className="title is-3"
+  >
+    Commits List
+  </h1>
+  <div
+    className="field"
+  >
+    <label
+      className="label is-size-6"
+    >
+      Search
+    </label>
+    <div
+      className="TextInput control "
+      data-error={null}
+      style={
+        Object {
+          "width": "276px",
+        }
+      }
+    >
+      <input
+        className="input  "
+        onChange={[Function]}
+        placeholder="Search ..."
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<CommitsPageHeader isSearching /> render 1`] = `
+<div
+  className="CommitsPageHeader"
+>
+  <h1
+    className="title is-3"
+  >
+    Commits List
+  </h1>
+  <div
+    className="field"
+  >
+    <label
+      className="label is-size-6"
+    >
+      Search
+    </label>
+    <div
+      className="TextInput control is-loading"
+      data-error={null}
+      style={
+        Object {
+          "width": "276px",
+        }
+      }
+    >
+      <input
+        className="input  "
+        onChange={[Function]}
+        placeholder="Search ..."
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<CommitsPageHeader repository={...} /> render 1`] = `
+<div
+  className="CommitsPageHeader"
+>
+  <h1
+    className="title is-3"
+  >
+    Commits List
+  </h1>
+  <div
+    className="field"
+  >
+    <label
+      className="label is-size-6"
+    >
+      Search
+      <span
+        className="has-text-weight-light"
+      >
+         in 
+        Owner
+        's 
+        Repository
+         (
+        Ref Name
+        )
+      </span>
+    </label>
+    <div
+      className="TextInput control "
+      data-error={null}
+      style={
+        Object {
+          "width": "276px",
+        }
+      }
+    >
+      <input
+        className="input  "
+        onChange={[Function]}
+        placeholder="Search ..."
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<CommitsPageHeader showTableHeader /> render 1`] = `
+<div
+  className="CommitsPageHeader"
+>
+  <h1
+    className="title is-3"
+  >
+    Commits List
+  </h1>
+  <div
+    className="field"
+  >
+    <label
+      className="label is-size-6"
+    >
+      Search
+    </label>
+    <div
+      className="TextInput control "
+      data-error={null}
+      style={
+        Object {
+          "width": "276px",
+        }
+      }
+    >
+      <input
+        className="input  "
+        onChange={[Function]}
+        placeholder="Search ..."
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    className="CommitsPageHeader_TableHeader"
+  >
+    <div
+      className="columns CommitRow CommitRow_Header"
+    >
+      <div
+        className="column is-2"
+      >
+        Author
+      </div>
+      <div
+        className="column is-2"
+      >
+        Commit
+      </div>
+      <div
+        className="column is-5"
+      >
+        Message
+      </div>
+      <div
+        className="column is-3"
+      >
+        Created
+      </div>
+    </div>
+  </div>
+</div>
+`;
