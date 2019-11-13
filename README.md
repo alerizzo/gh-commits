@@ -41,14 +41,14 @@ REACT_APP_GITHUB_TOKEN=[your GitHub token here]
 
 There's a sample `.env.sample` file for you to complete the token and rename the file.
 
-### `npm start`
+### Running the application
 
-Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Run `npm start` to execute the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `npm test`
+### Running the tests
 
-Launches the test runner in the interactive watch mode.
+Run `npm test` to run the tests. It launches the test runner in the interactive watch mode.
 
-### `npm run build`
+### Building the app
 
-Builds the app for production to the `build` folder.
+Run `npm run build` to build the app for production into the `build` folder.
