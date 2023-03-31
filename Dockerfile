@@ -12,7 +12,7 @@ ENV REACT_APP_GITHUB_TOKEN=$gh_token
 COPY . /app
 RUN npm run build
 
-FROM nginx:1.17.5-alpine
+FROM nginx:stable-alpine
 COPY --from=react-build /app/build /usr/share/nginx/html
 EXPOSE 80
 
